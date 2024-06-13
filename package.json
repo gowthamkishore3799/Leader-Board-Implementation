@@ -4,7 +4,9 @@
   "description": "This repository provides an implementation of a Redis leaderboard system, specifically designed for multiplayer games such as Call of Duty and Battlegrounds. Redis is utilized due to its efficiency and ease of scaling for leaderboard operations compared to traditional databases.",
   "main": "index.js",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^20.14.2",
+    "@types/uuid-with-v6": "^1.1.2",
     "nodemon": "^3.1.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
@@ -14,9 +16,17 @@
     "start:dev": "npx nodemon",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js"
-
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "mongoosh": "^0.0.7",
+    "uuid": "^10.0.0",
+    "uuid-with-v6": "^2.0.0"
+  }
 }
