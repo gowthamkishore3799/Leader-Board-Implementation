@@ -1,12 +1,20 @@
 import express from 'express';
+import { GameController } from '../controllers/gameController';
 const router = express.Router()
 
 
-router.post('/', (req, res)=>{
-    const gameId = req.body.gameId;
+
+router.post('/', async (req, res) => {
     const players = req.body.players;
 
-    let playerIds = []
+    const gameId = await GameController.createGame(players);
+
+    res.send({
+        success: true,
+        data : {
+            gameId : gameId,
+        }
+     })
 })
 
 
