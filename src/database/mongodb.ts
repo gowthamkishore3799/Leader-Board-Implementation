@@ -20,8 +20,8 @@ export class Mongodb implements Database{
         if(!mongodbConnectionString){
             throw new Error("Error in Connecting to Mongodb");
         }
-
-
-        mongoose.connect(mongodbConnectionString)
+        mongoose.connect(mongodbConnectionString).then(()=>{
+            console.log("Connected to Mongodb")
+        })
     }
 }

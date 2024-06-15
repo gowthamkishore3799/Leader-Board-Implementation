@@ -1,9 +1,14 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import process from 'process';
 import 'dotenv/config'
 import bodyParser from 'body-parser';
 import gameRouter from './router/game'
+import { Database } from './database/database';
 
+
+
+
+Database.connect();
 const app = express();
 
 process.on('unhandledRejection', (err: any)=>{
