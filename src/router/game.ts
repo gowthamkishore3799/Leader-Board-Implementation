@@ -8,7 +8,6 @@ router.post('/', async (req, res) => {
     const players = req.body.players;
 
     const gameId = await GameController.createGame(players);
-
     res.send({
         success: true,
         data : {

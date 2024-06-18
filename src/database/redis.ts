@@ -4,9 +4,9 @@ import { Redis } from "ioredis";
 
 export class RedisInMemory{
 
-    static instance: RedisInMemory
+    static instance: RedisInMemory;
 
-    static redisConnection: Redis
+    static redisConnection: Redis;
 
     public static getInstance(): RedisInMemory{
         if(!RedisInMemory.instance){
@@ -17,7 +17,6 @@ export class RedisInMemory{
     }
 
     public connect(): void{
-        
         if (!RedisInMemory.redisConnection) {
             RedisInMemory.redisConnection = new Redis({
                 host: process.env.REDIS_URL, // Redis host
